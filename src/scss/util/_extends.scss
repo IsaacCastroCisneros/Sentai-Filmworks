@@ -1,0 +1,24 @@
+@use '../mixins/mixin' as m;
+
+.container
+{
+    @include m.container(1170px);
+}
+.flex
+{
+    display: flex;
+    align-items: center;
+}
+.button
+{
+    background-color: unset;
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    cursor: pointer;
+    outline: none;
+    &:hover
+    {
+        color: #96F500;
+    }
+}

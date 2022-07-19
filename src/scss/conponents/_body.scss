@@ -1,0 +1,40 @@
+@use '../util/extends';
+
+.body-block
+{
+    @extend .container;
+    &__video-container
+    {
+        padding:0 15px;
+        padding-bottom: 5.3rem;
+    }
+    &__video
+    {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+.flex
+{
+    @extend .flex;
+    width: 100%;  
+    &__item
+    {
+        flex: 1;
+        margin-bottom: 24px;
+        padding: 0 15px;
+    }
+    &__img
+    {
+        width: 100%;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width:575px) 
+{
+  .flex
+  {
+      flex-direction: column;
+  }
+}

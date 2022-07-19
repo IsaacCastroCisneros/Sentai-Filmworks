@@ -1,0 +1,22 @@
+@use '../util/extends';
+
+.carosuel-block
+{
+    margin-top:94.38px;
+    margin-bottom: 2.2em;
+}
+.carosuel
+{
+    @extend .container;
+    position: relative;
+    overflow: hidden;
+    &__flex
+    {
+        @extend .flex;    
+    }
+    &__img
+    {
+       object-fit: contain;
+       width: 100%;
+    }
+}

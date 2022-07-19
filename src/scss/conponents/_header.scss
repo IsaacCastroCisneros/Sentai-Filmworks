@@ -1,0 +1,204 @@
+@use '../util/extends';
+
+.header
+{
+    background-color: rgb(0, 0, 0);
+    top: 0;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 8px 0px rgb(153, 153, 153) ;
+    z-index: 999;
+    transition: ease-in-out .2s;
+    &__under-container
+    {
+        background-color: rgba(150, 245, 0, 1);
+    }
+    &__under-title
+    {
+        text-align: center;
+        font-size: 14px;
+        padding: .4em 0;
+    }
+}
+.nav-bar
+{
+    @extend .container,.flex;
+    position: relative;
+    justify-content: space-between;
+    color: #fff;
+    padding: .7em 8px;
+    &__menu-container
+    {
+        @extend .flex;
+        gap: .8em;
+        margin-right:1em;
+        order: 1;
+    }
+    &__menu
+    {
+        position: fixed;
+        box-shadow: 1px 4px 15px 0px rgb(56, 56, 56) ;
+        z-index: 99;
+        pointer-events: none;
+        opacity: 0;
+        top: 94.38px;
+        left: 0;
+        transform: translateX(-100%);
+        width: 14.6em;
+        height: 100%;
+        color: #fff;
+        background-color: #252525;
+        transition: ease-in-out .3s;
+        padding: 1.2em;
+    }
+    &__menu-container.active &__menu
+    {
+        transform: translateX(0); 
+        opacity: 1;
+        pointer-events: auto;
+    }
+    &__cancel-btn
+    {
+        @extend .button;
+        border: none;
+        position: relative;
+        left: 100%;
+        transform: translateX(-100%);
+    }
+    &__list
+    {
+        &-title
+        {
+            font-size: 15px;
+            margin-top: 1em;
+        }
+    }
+    &__item
+    {
+        list-style: none;
+        margin: .5em 0 0 .7em;
+    }
+    &__link
+    {
+        @extend .button;
+        font-size: 15px;
+        font-weight: 100;
+    }
+    &__hamburger
+    {
+        @extend .flex,.button;
+        display: flex;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 20px;  
+        justify-content: center;
+        height: 28px;
+        width: 29.5px;
+        border-radius: 2px;
+        &:hover
+        {
+            border: 1px solid #96F500;
+        }      
+    }
+    &__logo-container
+    {
+        height: 40px;
+    }
+    &__logo
+    {
+        height: 100%
+    }
+    &__input-container
+    {
+        padding: 4px 0;
+        @extend .flex;
+        width:834.67px;
+        order: 2;
+    }
+    &__input
+    {   
+        padding: 7px 30px 7px 8px;
+        flex: 1;
+        outline: none;
+        color: #fff;
+        background-color: #FFFFFF0D;
+        border: 1px solid rgb(151, 151, 151);
+        border-radius: 3px 0 0 3px;
+        border-right: none;
+        transition: ease-in-out .5s;
+        &:focus
+        {
+            background-color: rgba(180, 180, 180, 0.3);
+        }
+        &-btn
+        {
+           width: 2.5em;
+           padding: 7px 8px;
+           border-radius: 0 3px 3px 0;
+           text-align: center;
+           color: rgb(151, 151, 151);;
+           border: 1px solid rgb(151, 151, 151);
+           background-color: unset;
+           cursor: pointer;
+           transition: ease-in-out .3s;
+           &:hover
+           {
+               color: #fff;
+               background-color: rgb(168, 168, 168);
+           }
+        }
+    }
+    &__icon-container
+    {
+        @extend .flex;
+        gap: .5em;
+        margin-left:1em;
+        order: 3;
+    }
+    &__icon
+    {
+        @extend .button;
+        font-size: 25px;
+        &--padding
+        {
+            margin-right: .2em;
+        }
+    }
+}
+@media only screen and (max-width:575px) 
+{
+    .header
+    {
+        &__under-container
+        {
+            display: none;
+        }
+    }
+    .nav-bar
+    {
+        padding: .7em 8px .3em 8px;
+        flex-wrap: wrap;
+        &__menu-container
+        {
+            flex:1;
+        }
+        &__menu
+        {
+            top: 102.38px;
+        }
+        &__input-container
+        {
+            width: 100%;
+            order: 3;
+            margin-top: .3em;
+        }
+        &__icon-container
+        {
+            flex: 1;
+            order: 2;
+            justify-content: flex-end;
+        }
+    }
+}
+
+
